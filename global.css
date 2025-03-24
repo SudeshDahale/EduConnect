@@ -1,0 +1,25 @@
+/* global.css */
+@media (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+    .sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
