@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student - Upload Documents</title>
+  <!-- Include your CSS files -->
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="submission.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <style>
+    .table-container {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .table-container th,
+    .table-container td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      min-width: 120px;
+    }
+
+    .upload-btn {
+      background-color: #1b6b93;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .upload-btn:hover {
+      background-color: #064663;
+    }
+    .status-submitted {
+      color: green;
+      font-weight: bold;
+    }
+    .status-pending {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">EduConnect</div>
+    <ul>
+      <div class="home" onclick="window.location.href='./student_dashboard.html'">
+        <li><i class="fas fa-home"></i>Home</li>
+      </div>
+      <div class="documents" onclick="window.location.href='./student_upload.html'">
+        <li><i class="fas fa-file-upload"></i>Submit Documents</li>
+      </div>
+      <div class="profile" onclick="window.location.href='./profile.html'">
+        <li><i class="fas fa-user"></i>Profile</li>
+      </div>
+      <div class="logout" onclick="window.location.href='./login.html'">
+        <li><i class="fas fa-sign-out-alt"></i>Logout</li>
+      </div>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="topbar">
+      <button class="top-button" onclick="window.location.href='./profile.html'"><i class="fas fa-user"></i>Profile</button>
+      <button class="top-button" onclick="window.location.href='./notifications.html'"><i class="fas fa-bell"></i>Notifications</button>
+      <button class="top-button" onclick="window.location.href='./login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+    </div>
+
+    <h1 class="title">Submit Required Documents</h1>
+
+    <div class="table-container">
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>Document Name</th>
+            <th>Description</th>
+            <th>Deadline</th>
+            <th>Proof Link</th>
+            <th>Upload</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example row -->
+          <tr>
+            <td>ID Proof</td>
+            <td>Upload your valid ID card</td>
+            <td>2025-05-01</td>
+            <td><a href="https://example.com/requirement-doc.pdf" target="_blank">View</a></td>
+            <td>
+              <button class="upload-btn" onclick="uploadDocument(this)">Upload</button>
+            </td>
+            <td class="status-pending">Pending</td>
+          </tr>
+          <!-- More rows can be added dynamically based on the admin's published template -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- JavaScript for handling uploads (simple simulation) -->
+  <script>
+    function uploadDocument(button) {
+      // This function simulates an upload; replace with actual file input & submission
+      const row = button.parentNode.parentNode;
+      // Prompt user to confirm upload
+      const confirmUpload = confirm("Do you want to upload this document now?");
+      if (confirmUpload) {
+        // On real implementation, you would open a file selector or navigate to an upload form
+        // After successful upload, update the status cell
+        const statusCell = row.cells[5];
+        statusCell.textContent = "Submitted";
+        statusCell.classList.remove("status-pending");
+        statusCell.classList.add("status-submitted");
+      }
+    }
+  </script>
+</body>
+</html>
