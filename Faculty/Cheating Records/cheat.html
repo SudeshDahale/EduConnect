@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty - Cheating Records</title>
+    <link rel="stylesheet" href="./cheat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            
+            <div class="home" onclick="window.location.href='../homepage.html'">
+                <li><i class="fas fa-home"></i> Home</li>
+            </div>
+            <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'">
+                <li><i class="fas fa-comment-dots"></i> Complaint System</li>
+            </div>
+            <div class="course" onclick="window.location.href='../Course Section/course.html'">
+                <li><i class="fas fa-book"></i> Course Section</li>
+            </div>
+            <div class="exam" onclick="window.location.href='../Exam/exam.html'">
+                <li><i class="fas fa-calendar-check"></i> Exam Schedule</li>
+            </div>
+            <div class="leave" onclick="window.location.href='../Leave Application/leave.html'">
+                <li><i class="fas fa-calendar-day"></i> Leave Application</li>
+            </div>
+            <div class="feedback" onclick="window.location.href='../Feedback/feedback.html'">
+                <li><i class="fas fa-comment"></i> Student Feedback</li>
+            </div>
+            <div class="report" onclick="window.location.href='../Student Report/report.html'">
+                <li><i class="fas fa-file-alt"></i> Student Report</li>
+            </div>
+            <div class="events" onclick="window.location.href='../Events/event.html'">
+                <li><i class="fas fa-calendar-alt"></i> Upcoming Events</li>
+            </div>
+            <div class="cheating" onclick="window.location.href='../Cheating Records/cheat.html'">
+                <li><i class="fas fa-exclamation-triangle"></i> Cheating Records</li>
+            </div>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../Profile/profile.html'"><i class="fas fa-user"></i> Profile</button>
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <h1 class="title">Cheating Records</h1>
+
+        <!-- Search Box -->
+        <div class="search-container">
+            <input type="text" id="searchStudent" placeholder="Search by student name or roll no..." onkeyup="searchFunction()">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Roll No</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Action Taken</th>
+                    </tr>
+                </thead>
+                <tbody id="cheatingTable">
+                    <tr>
+                        <td>Sakshi Jomivale</td>
+                        <td>123456</td>
+                        <td>Mathematics</td>
+                        <td>2024-02-12</td>
+                        <td>Copying during exam</td>
+                        <td>Issued warning</td>
+                    </tr>
+                    <tr>
+                        <td>Sneha Kondekar</td>
+                        <td>987654</td>
+                        <td>Physics</td>
+                        <td>2024-02-05</td>
+                        <td>Unauthorized mobile use</td>
+                        <td>Reported to principal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function searchFunction() {
+            let input = document.getElementById("searchStudent").value.toLowerCase();
+            let rows = document.querySelectorAll("#cheatingTable tr");
+            rows.forEach(row => {
+                let text = row.textContent.toLowerCase();
+                row.style.display = text.includes(input) ? "" : "none";
+            });
+        }
+    </script>
+
+</body>
+</html>

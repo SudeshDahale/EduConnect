@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ongoing Surveys</title>
+    <link rel="stylesheet" href="./feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="leave" onclick="window.location.href='./leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>   
+            <!-- <div class="home" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-home"></i>Home</li></div> -->
+            <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="cheating" onclick="window.location.href='../Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../Student Election/election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="events" onclick="window.location.href='../Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <div class="logout" onclick="window.location.href='./Logout.html'"><li><i class="fas fa-sign-out-alt"></i>Logout</li></div> -->
+            <div class="feedback" onclick="window.location.href='./feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+            
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../notification.html'"><i class="fas fa-bell"></i>Notifications</button>
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Ongoing Surveys</h1>
+
+        <!-- Ongoing Surveys Section -->
+        <div class="survey-list">
+            <div class="survey-card">
+                <h3>Survey Title 1</h3>
+                <p>Description of the survey goes here. Participate to give your Feedback!</p>
+                <button class="survey-button" onclick="participateSurvey(1)">Participate</button>
+            </div>
+
+            <div class="survey-card">
+                <h3>Survey Title 2</h3>
+                <p>Another interesting survey description here. Join the survey now!</p>
+                <button class="survey-button" onclick="participateSurvey(2)">Participate</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function participateSurvey(surveyId) {
+            alert('You clicked Participate for Survey ' + surveyId);
+            // Implement navigation or modal for survey participation
+        }
+    </script>
+</body>
+</html>

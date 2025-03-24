@@ -1,0 +1,137 @@
+<!-- Notification Page (notification.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Student</title>
+    <link rel="stylesheet" href="./notification.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .notification-container {
+            max-width: 100%;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .filter-dropdown {
+            margin-bottom: 15px;
+        }
+        .filter-dropdown select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .notification-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .notification-table th, .notification-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .notification-table th {
+            background-color: #064663;
+            color: white;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .status.pending {
+            color: orange;
+        }
+        .status.approved {
+            color: green;
+        }
+        .status.rejected {
+            color: red;
+        }
+    </style>
+    <script>
+        function filterNotifications() {
+            let status = document.getElementById("filter").value;
+            let rows = document.querySelectorAll(".notification-table tbody tr");
+            rows.forEach(row => {
+                if (status === 'all' || row.classList.contains(status)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul><div class="home" onclick="window.location.href='./HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="complaint" onclick="window.location.href='./Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="leave" onclick="window.location.href='./Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>
+            <div class="cheating" onclick="window.location.href='./Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="events" onclick="window.location.href='./Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <div class="election" onclick="window.location.href='./Student Election/election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="feedback" onclick="window.location.href='./Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../Profile/profile.html'"><i class="fas fa-user"></i> Profile</button>
+            <button class="top-button" onclick="window.location.href='./notification.html'"><i class="fas fa-bell"></i> Notifications</button>
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <h1 class="title">Notifications</h1>
+        <div class="notification-container">
+            <div class="filter-dropdown">
+                <label for="filter">Filter by Status: </label>
+                <select id="filter" onchange="filterNotifications()">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+            </div>
+            <table class="notification-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="pending">
+                        <td>22nd Feb</td>
+                        <td>New leave application submitted.</td>
+                        <td class="status pending">Pending</td>
+                    </tr>
+                    <tr class="approved">
+                        <td>14th Feb</td>
+                        <td>Your leave request (12th - 14th Feb) has been reviewed.</td>
+                        <td class="status approved">Approved</td>
+                    </tr>
+                    <tr class="rejected">
+                        <td>3rd Mar</td>
+                        <td>Your leave request (1st - 3rd Mar) was rejected. <em>Reason: Insufficient leave balance</em>.</td>
+                        <td class="status rejected">Rejected</td>
+                    </tr>
+                    <tr class="pending">
+                        <td>5th Mar</td>
+                        <td>Leave request (5th - 7th Mar) has been sent for review.</td>
+                        <td class="status pending">Pending</td>
+                    </tr>
+                    <tr class="pending">
+                        <td>10th Mar</td>
+                        <td>Admin requested additional details for your leave request (10th - 12th Mar).</td>
+                        <td class="status pending">Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

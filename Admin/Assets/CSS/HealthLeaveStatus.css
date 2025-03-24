@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    background: #064663;
+    color: white;
+    padding: 20px;
+}
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.sidebar ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.main-content {
+    flex: 1;
+    background: #ECF0F1;
+    padding: 20px;
+}
+.header {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2C3E50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.grid-item {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.title {
+    color: #064663;
+    /* font-size: 24px; */
+    margin-bottom: 20px;
+    text-align:center;
+
+}
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    background: #1b6b93;
+    padding: 15px;
+}
+.top-button {
+    background: #e8f6ef;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+    
+}

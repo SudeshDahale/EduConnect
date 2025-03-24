@@ -1,0 +1,151 @@
+body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh;
+    background: #f0f4f8;
+}
+
+.sidebar {
+    width: 250px;
+    background: #064663;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e8f6ef;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.main-content {
+    flex: 1;
+    background: #f0f4f8;
+    padding: 20px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    background: #1b6b93;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-button {
+    background: #e8f6ef;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-button:hover {
+    background: #064663;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.title {
+    color: #064663;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 20px;
+}
+
+.grid-item {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.grid-item:hover {
+    background: #e8f6ef;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item h2 {
+    color: #064663;
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.grid-item p {
+    color: #555;
+    font-size: 14px;
+}
+
+.icon {
+    font-size: 40px;
+    color: #1b6b93;
+    margin-bottom: 15px;
+}
+@media (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+    .sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}

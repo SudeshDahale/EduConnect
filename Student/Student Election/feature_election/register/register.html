@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Application</title>
+    <link rel="stylesheet" href="./register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../../../HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="election" onclick="window.location.href='../../election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="complaint" onclick="window.location.href='../../../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="leave" onclick="window.location.href='../../../Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="events" onclick="window.location.href='../../../Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <div class="feedback" onclick="window.location.href='./Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../../Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../notification.html'"><i class="fas fa-bell"></i>Notifications</button>
+            <button class="top-button" onclick="window.location.href='../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Candidate Application</h1>
+
+        <div class="form-container">
+            <form action="submit_application.php" method="POST" class="application-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Biotechnology">Biotechnology</option>
+                </select>
+        
+                <label for="position">Position:</label>
+                <select id="position" name="position" required>
+                    <option value="">Select Position</option>
+                    <option value="President">President</option>
+                    <option value="Vice President">Vice President</option>
+                    <option value="Secretary">Secretary</option>
+                    <option value="Treasurer">Treasurer</option>
+                    <option value="Event Coordinator">Event Coordinator</option>
+                </select>
+        
+                <label for="manifesto">Election Manifesto:</label>
+                <textarea id="manifesto" name="manifesto" rows="5" required></textarea>
+                
+                <button type="submit" class="button">Apply Now</button>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

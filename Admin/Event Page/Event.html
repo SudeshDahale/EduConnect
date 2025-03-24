@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+    <link rel="stylesheet" href="./Event.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button" onclick="window.location.href='../AdminHomePage.html'"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Upcoming Events</h1>
+        <div class="event-container">
+            <div class="event-card" onclick="window.location.href='./features_event/submission_approval/submission.html'">
+                <i class="fas fa-calendar-day icon"></i>
+                <h2> Event Submission and Approval</h2>
+                <p>Join us for a day of fun and celebration!</p>
+            </div>
+            <div class="event-card" onclick="window.location.href='./features_event/Guest/guest.html'">
+                <i class="fas fa-graduation-cap icon"></i>
+                <h2>Guest and Attendee Management</h2>
+                <p>Celebrate the achievements of our graduates.</p>
+            </div>
+            <div class="event-card" onclick="window.location.href='./features_event/budget_sponsor/budget.html'">
+                <i class="fas fa-chalkboard-teacher icon"></i>
+                <h2>Budget & Sponsorship</h2>
+                <p>Learn the latest trends in Artificial Intelligence.</p>
+            </div>
+            <div class="event-card" onclick="window.location.href='./features_event/Event_dashboard/eventdash.html'">
+                <i class="fas fa-music icon"></i>
+                <h2>Event Dashboard</h2>
+                <p>Event Dashboards and Event Management.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

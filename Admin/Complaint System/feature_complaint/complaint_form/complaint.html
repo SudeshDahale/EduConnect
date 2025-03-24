@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Submission</title>
+    <link rel="stylesheet" href="./complaint.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='../../../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../../../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../../../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../../../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../../../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button" onclick="window.location.href='../../../AdminHomePage.html'"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../../../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Complaint Submissions</h1>
+        <div class="content-container">
+            <!-- Complaint Submission Form -->
+            <!-- <div class="section">
+                <h2><i class="fas fa-comment-dots"></i> Submit a Complaint</h2>
+                <form id="complaintForm">
+                    <div class="form-group">
+                        <label for="complaintTitle">Title</label>
+                        <input type="text" id="complaintTitle" name="complaintTitle" placeholder="Enter complaint title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintCategory">Category</label>
+                        <select id="complaintCategory" name="complaintCategory" required>
+                            <option value="">Select category</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Administrative">Administrative</option>
+                            <option value="Facilities">Facilities</option>
+                            <option value="Harassment">Harassment</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintDescription">Detailed Issue</label>
+                        <textarea id="complaintDescription" name="complaintDescription" placeholder="Enter detailed description of the issue" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintEvidence">Evidence (Optional)</label>
+                        <input type="file" id="complaintEvidence" name="complaintEvidence">
+                    </div>
+                    <button type="submit" class="submit-button">Submit Complaint</button>
+                </form>
+            </div> -->
+
+            <!-- Submitted Complaints Table -->
+            <div class="section">
+                <h2><i class="fas fa-table"></i> Submitted Complaints</h2>
+                <table class="complaints-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Unfair Grading</td>
+                            <td>Academic</td>
+                            <td>2023-10-10</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <button class="view-button">View</button>
+                                <button class="delete-button">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Broken Chair in Classroom</td>
+                            <td>Facilities</td>
+                            <td>2023-09-25</td>
+                            <td><span class="status resolved">Resolved</span></td>
+                            <td>
+                                <button class="view-button">View</button>
+                                <button class="delete-button">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Harassment Complaint</td>
+                            <td>Harassment</td>
+                            <td>2023-08-15</td>
+                            <td><span class="status in-progress">In Progress</span></td>
+                            <td>
+                                <button class="view-button">View</button>
+                                <button class="delete-button">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <!-- <div class="home" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-home"></i>Home</li></div> -->
+            <div class="leave" onclick="window.location.href='../Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>   
+            <!-- <div class="home" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-home"></i>Home</li></div> -->
+            <!-- <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div> -->
+            <div class="cheating" onclick="window.location.href='../Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../Student Election/election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="events" onclick="window.location.href='../Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <div class="feedback" onclick="window.location.href='../Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+            
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+            <button class="top-button" onclick="window.location.href='../notification.html'"><i class="fas fa-bell"></i>Notifications</button>
+        </div>
+
+        <h1 class="title">Student Profile</h1>
+        
+        <div class="profile-section">
+            <img src="profile.jpg" alt="Student Photo" class="profile-pic">
+            <div class="profile-details">
+                <h2>Sahil Kangle</h2>
+                <p><strong>Roll No:</strong> 12345</p>
+                <p><strong>Email:</strong> SahilKangle@example.com</p>
+                <p><strong>Course:</strong> Computer Science</p>
+            </div>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card" onclick="window.location.href='./Attendance/attendance.html'">
+                <i class="fas fa-calendar-check feature-icon"></i>
+                <h3>Monthly Attendance</h3>
+                <p>View your attendance records for each month.</p>
+            </div>
+            <a href="https://classroom.google.com/"><div class="feature-card" >
+                <i class="fas fa-file-alt feature-icon"></i>
+                <h3>Assignments</h3>
+                <p>Check and submit assignments.</p>
+            </div></a>
+            <a href="https://witresults.contineo.in/"><div class="feature-card">
+                <i class="fas fa-graduation-cap feature-icon"></i>
+                <h3>Grades</h3>
+                <p>View academic performance and grades.</p>
+            </div></a>
+        </div>
+    </div>
+</body>
+</html>

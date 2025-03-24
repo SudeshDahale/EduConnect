@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget and Sponsorship</title>
+    <link rel="stylesheet" href="./budget.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='../../../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../../../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../../../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../../../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../../../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            
+
+            <!-- <li><i class="fas fa-user-cog"></i>Admin</li>
+            <li><i class="fas fa-calendar-alt"></i>Upcoming Events</li>
+            <li><i class="fas fa-wallet"></i>Fees Management</li>
+            <li><i class="fas fa-comment-dots"></i>Complaint System</li>
+            <li><i class="fas fa-heartbeat"></i>Health Leave Status</li>
+            <li><i class="fas fa-poll"></i>Survey and Feedback</li>
+            <li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li>
+            <li><i class="fas fa-vote-yea"></i>Student Election</li> -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button" onclick="window.location.href='../../../AdminHomePage.html'"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../../../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Budget and Sponsorship</h1>
+        <div class="content-container">
+            <!-- Budget Allocation Section -->
+            <div class="section">
+                <h2><i class="fas fa-coins"></i> Budget Allocation</h2>
+                <div class="budget-grid">
+                    <div class="budget-item">
+                        <h3>Total Budget</h3>
+                        <p class="budget-value">Rs. 50,000</p>
+                    </div>
+                    <div class="budget-item">
+                        <h3>Allocated Budget</h3>
+                        <p class="budget-value">Rs. 35,000</p>
+                    </div>
+                    <div class="budget-item">
+                        <h3>Remaining Budget</h3>
+                        <p class="budget-value">Rs. 15,000</p>
+                    </div>
+                </div>
+                <div class="budget-form">
+                    <h3>Allocate Budget to Event</h3>
+                    <form id="allocateBudgetForm">
+                        <div class="form-group">
+                            <label for="eventName">Event Name</label>
+                            <select id="eventName" name="eventName" required>
+                                <option value="">Select Event</option>
+                                <option value="Annual Fest">Annual Fest</option>
+                                <option value="Workshop on AI">Workshop on AI</option>
+                                <option value="Graduation Ceremony">Graduation Ceremony</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="allocatedAmount">Amount</label>
+                            <input type="number" id="allocatedAmount" name="allocatedAmount" placeholder="Enter amount" required>
+                        </div>
+                        <button type="submit" class="submit-button">Allocate Budget</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sponsorship Management Section -->
+            <div class="section">
+                <h2><i class="fas fa-handshake"></i> Sponsorship Management</h2>
+                <div class="sponsorship-grid">
+                    <div class="sponsorship-item">
+                        <h3>Total Sponsors</h3>
+                        <p class="sponsorship-value">10</p>
+                    </div>
+                    <div class="sponsorship-item">
+                        <h3>Total Sponsorship Amount</h3>
+                        <p class="sponsorship-value">Rs. 25,000</p>
+                    </div>
+                    <div class="sponsorship-item">
+                        <h3>Pending Sponsorships</h3>
+                        <p class="sponsorship-value">3</p>
+                    </div>
+                </div>
+                <div class="sponsorship-form">
+                    <h3>Add New Sponsor</h3>
+                    <form id="addSponsorForm">
+                        <div class="form-group">
+                            <label for="sponsorName">Sponsor Name</label>
+                            <input type="text" id="sponsorName" name="sponsorName" placeholder="Enter sponsor name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sponsorAmount">Amount</label>
+                            <input type="number" id="sponsorAmount" name="sponsorAmount" placeholder="Enter sponsorship amount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sponsorEvent">Event</label>
+                            <select id="sponsorEvent" name="sponsorEvent" required>
+                                <option value="">Select Event</option>
+                                <option value="Annual Fest">Annual Fest</option>
+                                <option value="Workshop on AI">Workshop on AI</option>
+                                <option value="Graduation Ceremony">Graduation Ceremony</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-button">Add Sponsor</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sponsors Table Section -->
+            <div class="section">
+                <h2><i class="fas fa-table"></i> Sponsors List</h2>
+                <table class="sponsors-table">
+                    <thead>
+                        <tr>
+                            <th>Sponsor Name</th>
+                            <th>Amount</th>
+                            <th>Event</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company A</td>
+                            <td>Rs. 5,000</td>
+                            <td>Annual Fest</td>
+                            <td><span class="status approved">Approved</span></td>
+                            <td>
+                                <button class="edit-button">Edit</button>
+                                <button class="delete-button">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Company B</td>
+                            <td>Rs. 3,000</td>
+                            <td>Workshop on AI</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <button class="approve-button">Approve</button>
+                                <button class="reject-button">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Company C</td>
+                            <td>Rs. 7,000</td>
+                            <td>Graduation Ceremony</td>
+                            <td><span class="status rejected">Rejected</span></td>
+                            <td>
+                                <button class="edit-button">Edit</button>
+                                <button class="delete-button">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

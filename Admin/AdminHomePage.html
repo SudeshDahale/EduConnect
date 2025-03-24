@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./AdminHomePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='./Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='./Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='./Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='./Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='./Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='./Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='./profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button"onclick="window.location.href='../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Admin Dashboard</h1>
+        <div class="grid-container">
+            <div class="grid-item" onclick="window.location.href='./Feedback/Feedback.html'">
+                <i class="fas fa-poll icon"></i>
+                <h2>Survey and Feedback</h2>
+                <p>Manage surveys and analyze feedback.</p>
+            </div>
+            <div class="grid-item" onclick="window.location.href='./Event Page/Event.html'">
+                <i class="fas fa-calendar-alt icon"></i>
+                <h2>Upcoming Events</h2>
+                <p>Plan and manage upcoming events.</p>
+            </div>
+            <div class="grid-item" onclick="window.location.href='./Complaint System/Complaint.html'">
+                <i class="fas fa-comment-dots icon"></i>
+                <h2>Complaint System</h2>
+                <p>Handle anonymous complaints securely.</p>
+            </div>
+            <div class="grid-item" onclick="window.location.href='./Health and Leave/Health.html'">
+                <i class="fas fa-heartbeat icon"></i>
+                <h2>Health Leave Status</h2>
+                <p>Manage health and leave records.</p>
+            </div>
+            <div class="grid-item" onclick="window.location.href='./Student Election System/Election.html'">
+                <i class="fas fa-vote-yea icon"></i>
+                <h2>Student Election</h2>
+                <p>Oversee student election processes.</p>
+            </div>
+            <div class="grid-item" onclick="window.location.href='./Cheating Record/cheat.html'">
+                <i class="fas fa-exclamation-triangle icon"></i>
+                <h2>Cheating Records</h2>
+                <p>Track and manage cheating incidents.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

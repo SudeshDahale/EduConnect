@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Homepage</title>
+    <link rel="stylesheet" href="./Homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='./Homepage.html'">
+                <li><i class="fas fa-home"></i> Home</li>
+            </div>
+            <div class="complaint" onclick="window.location.href='./Complaint/complaint.html'">
+                <li><i class="fas fa-comment-dots"></i> Complaint System</li>
+            </div>
+            <div class="course" onclick="window.location.href='./Course Section/course.html'">
+                <li><i class="fas fa-book"></i> Course Section</li>
+            </div>
+            <div class="exam" onclick="window.location.href='./Exam/exam.html'">
+                <li><i class="fas fa-calendar-check"></i> Exam Schedule</li>
+            </div>
+            <div class="leave" onclick="window.location.href='./Leave Application/leave.html'">
+                <li><i class="fas fa-calendar-day"></i> Leave Application</li>
+            </div>
+            <div class="feedback" onclick="window.location.href='./Feedback/feedback.html'">
+                <li><i class="fas fa-comment"></i> Student Feedback</li>
+            </div>
+            <div class="report" onclick="window.location.href='./Student Report/report.html'">
+                <li><i class="fas fa-file-alt"></i> Student Report</li>
+            </div>
+            <div class="events" onclick="window.location.href='Events/event.html'">
+                <li><i class="fas fa-calendar-alt"></i> Upcoming Events</li>
+            </div>
+            <div class="cheating" onclick="window.location.href='./Cheating Records/cheat.html'">
+                <li><i class="fas fa-exclamation-triangle"></i> Cheating Records</li>
+            </div>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='./Profile/profile.html'"><i class="fas fa-user"></i> Profile</button>
+            <button class="top-button" onclick="window.location.href='../login.html'"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <!-- Header -->
+        <header class="faculty-header">
+            <h1>Faculty Dashboard</h1>
+            <!-- <p>Access all faculty-related features and manage student activities.</p> -->
+        </header>
+
+        <!-- Feature Cards -->
+        <div class="features-container">
+            <div class="feature-card" onclick="window.location.href='Complaint/complaint.html'">
+                <i class="fas fa-comment-dots"></i>
+                <h3>Complaint System</h3>
+                <p>Submit and track faculty complaints.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='Course Section/course.html'">
+                <i class="fas fa-book"></i>
+                <h3>Course Section</h3>
+                <p>Manage and update course details.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='Exam/exam.html'">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Exam Schedule</h3>
+                <p>View upcoming exam schedules.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='Leave Application/leave.html'">
+                <i class="fas fa-calendar-day"></i>
+                <h3>Leave Application</h3>
+                <p>Apply for faculty leave online.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='Feedback/feedback.html'">
+                <i class="fas fa-comment"></i>
+                <h3>Student Feedback</h3>
+                <p>Review feedback from students.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='Student Report/report.html'">
+                <i class="fas fa-file-alt"></i>
+                <h3>Student Report</h3>
+                <p>Analyze student performance reports.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

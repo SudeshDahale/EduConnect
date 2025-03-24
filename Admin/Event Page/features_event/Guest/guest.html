@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest and Attendee Management</title>
+    <link rel="stylesheet" href="./Guest.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="./Guest.js" defer></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='../../../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../../../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../../../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../../../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../../../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../../../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Guest and Attendee Management</h1>
+        
+        <div class="event-category">
+            <h2>AI Conference</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="aiConferenceList">
+                    <!-- Guests for AI Conference -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="event-category">
+            <h2>Graduation Ceremony</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="graduationList">
+                    <!-- Guests for Graduation Ceremony -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="event-category">
+            <h2>Music Fest</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="musicFestList">
+                    <!-- Guests for Music Fest -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const eventGuests = {
+            aiConference: [
+                { name: 'Sneha', email: 'Sneha@example.com' },
+                { name: 'Sudesh', email: 'Sudesh@example.com' }
+            ],
+            graduation: [
+                { name: 'Sahil', email: 'Sahil@example.com' },
+                { name: 'Sakshi', email: 'Sakshi@example.com' }
+            ],
+            musicFest: [
+                { name: 'Aarti', email: 'Aarti@example.com' },
+                { name: 'Yash', email: 'Yash@example.com' }
+            ]
+        };
+        
+        function displayGuests() {
+            const aiList = document.getElementById("aiConferenceList");
+            const gradList = document.getElementById("graduationList");
+            const musicList = document.getElementById("musicFestList");
+        
+            eventGuests.aiConference.forEach((guest, index) => {
+                aiList.innerHTML += `<tr><td>${index + 1}</td><td>${guest.name}</td><td>${guest.email}</td></tr>`;
+            });
+        
+            eventGuests.graduation.forEach((guest, index) => {
+                gradList.innerHTML += `<tr><td>${index + 1}</td><td>${guest.name}</td><td>${guest.email}</td></tr>`;
+            });
+        
+            eventGuests.musicFest.forEach((guest, index) => {
+                musicList.innerHTML += `<tr><td>${index + 1}</td><td>${guest.name}</td><td>${guest.email}</td></tr>`;
+            });
+        }
+        
+        document.addEventListener("DOMContentLoaded", displayGuests);
+        
+    </script>
+</body>
+</html>

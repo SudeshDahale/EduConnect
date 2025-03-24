@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Notifications</title>
+    <link rel="stylesheet" href="./notification.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            
+            <div class="home" onclick="window.location.href='../../HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="complaint" onclick="window.location.href='../../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="cheating" onclick="window.location.href='../../Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../Student Election/election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="events" onclick="window.location.href='../../Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <div class="leave" onclick="window.location.href='../../Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>
+            <!-- <div class="logout" onclick="window.location.href='./Logout.html'"><li><i class="fas fa-sign-out-alt"></i>Logout</li></div> -->
+            <div class="feedback" onclick="window.location.href='./Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../../Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../notification.html'"><i class="fas fa-bell"></i>Notifications</button>
+            <button class="top-button onclick="window.location.href='../../../login.html'""><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Event Notifications</h1>
+
+        <!-- Notification List -->
+        <div class="notification-container">
+            <!-- Notification 1 -->
+            <div class="notification-box">
+                <h2 class="event-title">HackFusion</h2>
+                <p class="event-date"><strong>Date:</strong> 21st February 2025</p>
+                <p class="event-time"><strong>Time:</strong> 09:00 PM</p>
+                <p class="event-description">Join us for an exciting day full of cultural performances, workshops, and more!</p>
+                <a href="https://www.hackfusion.org/"><button class="view-event-btn">View Details</button></a>
+            </div>
+
+            <!-- Notification 2 -->
+            <div class="notification-box">
+                <h2 class="event-title">Sports Day</h2>
+                <p class="event-date"><strong>Date:</strong> 22nd March 2025</p>
+                <p class="event-time"><strong>Time:</strong> 8:00 AM</p>
+                <p class="event-description">Get ready for a day of exciting sports events and friendly competitions!</p>
+                <button class="view-event-btn" onclick="window.location.href='./EventDetails.html'">View Details</button>
+            </div>
+
+            <!-- Notification 3 -->
+            <div class="notification-box">
+                <h2 class="event-title">Science Exhibition</h2>
+                <p class="event-date"><strong>Date:</strong> 5th April 2025</p>
+                <p class="event-time"><strong>Time:</strong> 11:00 AM</p>
+                <p class="event-description">Explore innovative projects and scientific breakthroughs at our annual exhibition.</p>
+                <button class="view-event-btn" onclick="window.location.href='./EventDetails.html'">View Details</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

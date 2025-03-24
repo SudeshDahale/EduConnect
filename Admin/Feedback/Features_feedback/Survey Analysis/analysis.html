@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Surveys and Analyze Feedback</title>
+    <link rel="stylesheet" href="../Survey Analysis/analysis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <!-- <li><i class="fas fa-user-cog"></i>Admin</li>
+            <li><i class="fas fa-calendar-alt"></i>Upcoming Events</li>
+            <li><i class="fas fa-wallet"></i>Fees Management</li>
+            <li><i class="fas fa-comment-dots"></i>Complaint System</li>
+            <li><i class="fas fa-heartbeat"></i>Health Leave Status</li>
+            <li><i class="fas fa-poll"></i>Survey and Feedback</li>
+            <li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li>
+            <li><i class="fas fa-vote-yea"></i>Student Election</li> -->
+
+            <div class="admin-page" onclick="window.location.href='../../../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../../../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../../../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../../../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../../../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button" onclick="window.location.href='../../../AdminHomePage.html'"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../../../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Manage Surveys and Analyze Feedback</h1>
+        <div class="content-container">
+            <!-- Create Survey Section -->
+           <!--  <div class="section">
+                 <h2><i class="fas fa-plus-circle"></i> Create a New Survey</h2>
+                <form id="surveyForm">
+                    <div class="form-group">
+                        <label for="surveyTitle">Survey Title</label>
+                        <input type="text" id="surveyTitle" name="surveyTitle" placeholder="Enter survey title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="surveyDescription">Description</label>
+                        <textarea id="surveyDescription" name="surveyDescription" placeholder="Enter survey description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="surveyQuestions">Questions</label>
+                        <textarea id="surveyQuestions" name="surveyQuestions" placeholder="Enter survey questions (one per line)" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Create Survey</button>
+                </form> 
+            </div>-->
+
+            <!-- View Survey Responses Section -->
+            <div class="section">
+                <h2><i class="fas fa-chart-bar"></i> Survey Responses</h2>
+                <div class="survey-list">
+                    <div class="survey-item">
+                        <h3>Survey: Student Satisfaction</h3>
+                        <p><strong>Responses:</strong> 120</p>
+                        <button class="view-button">View Responses</button>
+                    </div>
+                    <div class="survey-item">
+                        <h3>Survey: Campus Facilities Feedback</h3>
+                        <p><strong>Responses:</strong> 95</p>
+                        <button class="view-button">View Responses</button>
+                    </div>
+                    <div class="survey-item">
+                        <h3>Survey: Course Feedback</h3>
+                        <p><strong>Responses:</strong> 150</p>
+                        <button class="view-button">View Responses</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analyze Feedback Section -->
+            <!-- <div class="section">
+                <h2><i class="fas fa-chart-pie"></i> Analyze Feedback</h2>
+                <div class="chart-container">
+                    <canvas id="feedbackChart"></canvas>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Chart.js Library for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sample Chart Data
+        const ctx = document.getElementById('feedbackChart').getContext('2d');
+        const feedbackChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Positive', 'Neutral', 'Negative'],
+                datasets: [{
+                    label: 'Feedback Analysis',
+                    data: [65, 20, 15],
+                    backgroundColor: [
+                        '#4CAF50', // Green for Positive
+                        '#FFC107', // Yellow for Neutral
+                        '#F44336'  // Red for Negative
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Feedback Distribution'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Application for Faculty</title>
+    <link rel="stylesheet" href="./leave.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../homepage.html'">
+                <li><i class="fas fa-home"></i> Home</li>
+            </div>
+            <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'">
+                <li><i class="fas fa-comment-dots"></i> Complaint System</li>
+            </div>
+            <div class="course" onclick="window.location.href='../Course Section/course.html'">
+                <li><i class="fas fa-book"></i> Course Section</li>
+            </div>
+            <div class="exam" onclick="window.location.href='../Exam/exam.html'">
+                <li><i class="fas fa-calendar-check"></i> Exam Schedule</li>
+            </div>
+            <div class="leave" onclick="window.location.href='../Leave Application/leave.html'">
+                <li><i class="fas fa-calendar-day"></i> Leave Application</li>
+            </div>
+            <div class="feedback" onclick="window.location.href='../Feedback/feedback.html'">
+                <li><i class="fas fa-comment"></i> Student Feedback</li>
+            </div>
+            <div class="report" onclick="window.location.href='../Student Report/report.html'">
+                <li><i class="fas fa-file-alt"></i> Student Report</li>
+            </div>
+            <div class="events" onclick="window.location.href='../Events/event.html'">
+                <li><i class="fas fa-calendar-alt"></i> Upcoming Events</li>
+            </div>
+            <div class="cheating" onclick="window.location.href='../Cheating Records/cheat.html'">
+                <li><i class="fas fa-exclamation-triangle"></i> Cheating Records</li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Faculty Leave Application</h1>
+
+        <div class="form-container">
+            <form class="leave-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="faculty-name">Faculty Name</label>
+                    <input type="text" id="faculty-name" name="faculty_name" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="leave-type">Leave Type</label>
+                    <select id="leave-type" name="leave_type" required>
+                        <option value="casual">Casual Leave</option>
+                        <option value="sick">Sick Leave</option>
+                        <option value="maternity">Maternity Leave</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="start-date">Leave Start Date</label>
+                    <input type="date" id="start-date" name="start_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="end-date">Leave End Date</label>
+                    <input type="date" id="end-date" name="end_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason for Leave</label>
+                    <textarea id="reason" name="reason" rows="4" required placeholder="Provide a brief reason for your leave"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Leave Application</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

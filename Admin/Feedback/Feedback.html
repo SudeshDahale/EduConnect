@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surveys and Feedback</title>
+    <link rel="stylesheet" href="./Feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button" onclick="window.location.href='../AdminHomePage.html'"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Surveys and Feedbacks</h1>
+        <div class="grid-container">
+            <div class="grid-item" onclick="window.location.href='./Features_feedback/Survey/survey.html'">
+                <i class="fas fa-plus-circle icon"></i>
+                <h2>Create and Manage Surveys</h2>
+                <p>Design and distribute surveys to gather valuable insights.</p>
+            </div>
+            <div class="grid-item" onclick="window.location.href='./Features_feedback/Survey Analysis/analysis.html'">
+                <i class="fas fa-chart-line icon"></i>
+                <h2>Collecting and Analyzing Feedbacks</h2>
+                <p>Analyze feedback data to improve services and user experience.</p>
+            </div>
+            <!-- <div class="grid-item">
+                <i class="fas fa-shield-alt icon"></i>
+                <h2>Secure Feedback Mechanism</h2>
+                <p>Ensure anonymity and security for all feedback submissions.</p>
+            </div> -->
+            <div class="grid-item last-item" onclick="window.location.href='./Features_feedback/Dashboard/dashboard.html'">
+                <i class="fas fa-tachometer-alt icon"></i>
+                <h2>Dashboards</h2>
+                <p>Visualize data with interactive and customizable dashboards.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

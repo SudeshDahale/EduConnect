@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Submission and Approval</title>
+    <link rel="stylesheet" href="./host.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../../HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="complaint" onclick="window.location.href='../../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="cheating" onclick="window.location.href='../../Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../Student Election/election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="events" onclick="window.location.href='../../Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <div class="leave" onclick="window.location.href='../../Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>
+            <!-- <div class="logout" onclick="window.location.href='./Logout.html'"><li><i class="fas fa-sign-out-alt"></i>Logout</li></div> -->
+            <div class="feedback" onclick="window.location.href='./Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button" onclick="window.location.href='../../../AdminHomePage.html'"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../../../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../notification.html'"><i class="fas fa-bell"></i>Notifications</button>
+            <button class="top-button" onclick="window.location.href='../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Event Submission and Approval</h1>
+        <div class="content-container">
+            <!-- Event Submission Form -->
+            <div class="section">
+                <h2><i class="fas fa-calendar-plus"></i> Submit New Event</h2>
+                <form id="eventForm">
+                    <div class="form-group">
+                        <label for="eventName">Event Name</label>
+                        <input type="text" id="eventName" name="eventName" placeholder="Enter event name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">Event Date</label>
+                        <input type="date" id="eventDate" name="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventLocation">Location</label>
+                        <input type="text" id="eventLocation" name="eventLocation" placeholder="Enter event location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventBudget">Budget</label>
+                        <input type="number" id="eventBudget" name="eventBudget" placeholder="Enter event budget" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventSponsors">Sponsors</label>
+                        <textarea id="eventSponsors" name="eventSponsors" placeholder="Enter sponsors (comma-separated)" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit Event</button>
+                </form>
+            </div>
+
+            <!-- Event Approval Table -->
+            <div class="section">
+                <h2><i class="fas fa-table"></i> Event Approval Requests</h2>
+                <table class="events-table">
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Date</th>
+                            <th>Location</th>
+                            <th>Budget</th>
+                            <th>Sponsors</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Annual Fest</td>
+                            <td>2023-10-25</td>
+                            <td>Main Auditorium</td>
+                            <td>Rs. 5,000</td>
+                            <td>Upahaar</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>Workshop on AI</td>
+                            <td>2023-11-05</td>
+                            <td>Seminar Hall</td>
+                            <td>Rs. 2,000</td>
+                            <td>Arvind</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>Graduation Ceremony</td>
+                            <td>2023-12-15</td>
+                            <td>Open Ground</td>
+                            <td>Rs. 10,000</td>
+                            <td>Shevpav</td>
+                            <td><span class="status approved">Approved</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

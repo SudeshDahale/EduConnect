@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Lecture Schedule</title>
+    <link rel="stylesheet" href="./course.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            
+            <div class="home" onclick="window.location.href='../homepage.html'">
+                <li><i class="fas fa-home"></i> Home</li>
+            </div>
+            <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'">
+                <li><i class="fas fa-comment-dots"></i> Complaint System</li>
+            </div>
+            <div class="course" onclick="window.location.href='../Course Section/course.html'">
+                <li><i class="fas fa-book"></i> Course Section</li>
+            </div>
+            <div class="exam" onclick="window.location.href='../Exam/exam.html'">
+                <li><i class="fas fa-calendar-check"></i> Exam Schedule</li>
+            </div>
+            <div class="leave" onclick="window.location.href='../Leave Application/leave.html'">
+                <li><i class="fas fa-calendar-day"></i> Leave Application</li>
+            </div>
+            <div class="feedback" onclick="window.location.href='../Feedback/feedback.html'">
+                <li><i class="fas fa-comment"></i> Student Feedback</li>
+            </div>
+            <div class="report" onclick="window.location.href='../Student Report/report.html'">
+                <li><i class="fas fa-file-alt"></i> Student Report</li>
+            </div>
+            <div class="events" onclick="window.location.href='../Events/event.html'">
+                <li><i class="fas fa-calendar-alt"></i> Upcoming Events</li>
+            </div>
+            <div class="cheating" onclick="window.location.href='../Cheating Records/cheat.html'">
+                <li><i class="fas fa-exclamation-triangle"></i> Cheating Records</li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Faculty Lecture Schedule</h1>
+
+        <div class="schedule-section">
+            <div class="schedule-card">
+                <h3>Subject Name: Mathematics</h3>
+                <p><strong>Lecture Schedule:</strong> Mondays & Wednesdays, 10:00 AM - 12:00 PM</p>
+                <p><strong>Reminder:</strong> Review the course materials before each session.</p>
+                <button class="view-btn">Set Reminder</button>
+            </div>
+
+            <div class="schedule-card">
+                <h3>Subject Name: Physics</h3>
+                <p><strong>Lecture Schedule:</strong> Tuesdays & Thursdays, 2:00 PM - 4:00 PM</p>
+                <p><strong>Reminder:</strong> Ensure the lab equipment is ready for experiments.</p>
+                <button class="view-btn">Set Reminder</button>
+            </div>
+
+            <div class="schedule-card">
+                <h3>Subject Name: Computer Science</h3>
+                <p><strong>Lecture Schedule:</strong> Fridays, 9:00 AM - 11:00 AM</p>
+                <p><strong>Reminder:</strong> Prepare the coding exercises for practical sessions.</p>
+                <button class="view-btn">Set Reminder</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

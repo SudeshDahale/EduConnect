@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Complaint System</title>
+    <link rel="stylesheet" href="./complaint.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="complaint" onclick="window.location.href='./complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <!-- <div class="home" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-home"></i>Home</li></div> -->
+            <div class="leave" onclick="window.location.href='../Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>   
+            <!-- <div class="home" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-home"></i>Home</li></div> -->
+            <!-- <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div> -->
+            <div class="cheating" onclick="window.location.href='../Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../Student Election/election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="events" onclick="window.location.href='../Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <div class="logout" onclick="window.location.href='./Logout.html'"><li><i class="fas fa-sign-out-alt"></i>Logout</li></div> -->
+            <div class="feedback" onclick="window.location.href='./Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+            
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../notification.html'"><i class="fas fa-bell"></i>Notifications</button>
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Anonymous Complaint Form</h1>
+
+        <div class="form-container">
+            <form class="complaint-form">
+                <div class="form-group">
+                    <label for="complaintTitle">Complaint Title</label>
+                    <input type="text" id="complaintTitle" name="complaintTitle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="complaintDetails">Complaint Details</label>
+                    <textarea id="complaintDetails" name="complaintDetails" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="academic">Academic Issues</option>
+                        <option value="facilities">Facilities Issues</option>
+                        <option value="behavior">Behavior Issues</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Submit Complaint</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

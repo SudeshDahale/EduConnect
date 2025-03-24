@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./Homepage.css">
+    <link rel="stylesheet" href=./global.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='./Homepage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="complaint" onclick="window.location.href='./Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="leave" onclick="window.location.href='./Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>
+            <div class="cheating" onclick="window.location.href='./Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="events" onclick="window.location.href='./Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <div class="election" onclick="window.location.href='./Student Election/election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="feedback" onclick="window.location.href='./Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='./Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='./notification.html'"><i class="fas fa-bell"></i>Notifications</button>
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Student Dashboard</h1>
+
+        <div class="features-grid">
+            <div class="feature-card" onclick="window.location.href='./Complaint/complaint.html'">
+                <i class="fas fa-comment-dots feature-icon"></i>
+                <h3>Complaint System</h3>
+                <p>Manage and review student complaints submitted through the system.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='./Cheating Records/cheat.html'">
+                <i class="fas fa-exclamation-triangle feature-icon"></i>
+                <h3>Cheating Records</h3>
+                <p>Review and manage records related to cheating incidents.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='./Events/event.html'">
+                <i class="fas fa-calendar-alt feature-icon"></i>
+                <h3>Upcoming Events</h3>
+                <p>Track and manage upcoming events and activities for the students.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='./Leave Application/leave.html'">
+                <i class="fas fa-calendar-day feature-icon"></i>
+                <h3>Leave Application</h3>
+                <p>Review and approve leave requests submitted by students.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='./Feedback/feedback.html'">
+                <i class="fas fa-comment feature-icon"></i>
+                <h3>Feedback & Surveys</h3>
+                <p>Collect and analyze feedback from students through surveys.</p>
+            </div>
+
+            <div class="feature-card" onclick="window.location.href='./Student Election/election.html'">
+                <i class="fas fa-vote-yea feature-icon"></i>
+                <h3>Student Election</h3>
+                <p>Manage and oversee the student election process.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

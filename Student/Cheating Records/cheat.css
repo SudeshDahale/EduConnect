@@ -1,0 +1,191 @@
+/* Body and general layout */
+body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh;
+    background: #f0f4f8;
+}
+
+.sidebar {
+    width: 250px;
+    background: #064663;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e8f6ef;
+    letter-spacing: 2px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+}
+
+.sidebar ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.main-content {
+    flex: 1;
+    background: #f0f4f8;
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    background: #1b6b93;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-button {
+    background: #e8f6ef;
+    border: none;
+    padding: 12px 24px;
+    margin: 0 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-button:hover {
+    background: #064663;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.title {
+    color: #064663;
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Grid layout for cheating records */
+.record-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.record-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.record-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.record-header h2 {
+    font-size: 24px;
+    color: #064663;
+    font-weight: 500;
+}
+
+.record-status {
+    font-size: 16px;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.record-body p {
+    font-size: 16px;
+    color: #555;
+}
+
+.proof-link {
+    color: #064663;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.proof-link:hover {
+    color: #1b6b93;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .record-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .record-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+}
+@media (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+    .sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+}
+.sidebar {
+    width: 250px;
+    background: #064663;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+ul li:hover {
+    background: #1b6b93;
+    border-radius: 5px;
+}
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+    width: calc(100% - 270px);
+}
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    background: #1b6b93;
+    padding: 15px;
+}
+.top-button {
+    background: #e8f6ef;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.top-button:hover {
+    background: #c4ede0;
+}
+.title {
+    color: #064663;
+    /* font-size: 24px; */
+    margin-bottom: 20px;
+    text-align:center;
+
+}
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.event-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: #064663;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.event-card:hover {
+    background: #c4ede0;
+    transform: translateY(-5px);
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Attendance</title>
+    <link rel="stylesheet" href="./attendance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../../HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="complaint" onclick="window.location.href='../../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <!-- <div class="home" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-home"></i>Home</li></div> -->
+            <div class="leave" onclick="window.location.href='../../Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>   
+            <!-- <div class="home" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-home"></i>Home</li></div> -->
+            <!-- <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div> -->
+            <div class="cheating" onclick="window.location.href='../../Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../Student Election/election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="events" onclick="window.location.href='../../Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <div class="feedback" onclick="window.location.href='../../Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1 class="title">Monthly Attendance</h1>
+
+        <div class="filter-section">
+            <label for="monthFilter">Filter by Month:</label>
+            <select id="monthFilter" onchange="filterAttendance()">
+                <option value="all">All</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        </div>
+
+        <table class="attendance-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceRecords">
+                <tr data-month="January">
+                    <td>January 5, 2025</td>
+                    <td>Mathematics</td>
+                    <td class="present">Present</td>
+                </tr>
+                <tr data-month="January">
+                    <td>January 6, 2025</td>
+                    <td>Physics</td>
+                    <td class="absent">Absent</td>
+                </tr>
+                <tr data-month="February">
+                    <td>February 3, 2025</td>
+                    <td>Chemistry</td>
+                    <td class="present">Present</td>
+                </tr>
+                <tr data-month="March">
+                    <td>March 10, 2025</td>
+                    <td>Biology</td>
+                    <td class="present">Present</td>
+                </tr>
+                <tr data-month="March">
+                    <td>March 12, 2025</td>
+                    <td>Computer Science</td>
+                    <td class="absent">Absent</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Filter attendance records based on selected month
+        function filterAttendance() {
+            const selectedMonth = document.getElementById('monthFilter').value;
+            const rows = document.querySelectorAll('#attendanceRecords tr');
+
+            rows.forEach(row => {
+                const month = row.getAttribute('data-month');
+                if (selectedMonth === 'all' || selectedMonth === month) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

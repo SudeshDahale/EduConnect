@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolution Workflow</title>
+    <link rel="stylesheet" href="./resolution.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='../../../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../../../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../../../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../../../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../../../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+
+            <!-- <li><i class="fas fa-user-cog"></i>Admin</li>
+            <li><i class="fas fa-calendar-alt"></i>Upcoming Events</li>
+            <li><i class="fas fa-wallet"></i>Fees Management</li>
+            <li><i class="fas fa-comment-dots"></i>Complaint System</li>
+            <li><i class="fas fa-heartbeat"></i>Health Leave Status</li>
+            <li><i class="fas fa-poll"></i>Survey and Feedback</li>
+            <li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li>
+            <li><i class="fas fa-vote-yea"></i>Student Election</li> -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button" onclick="window.location.href='../../../AdminHomePage.html'"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../../../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Resolution Workflow</h1>
+        <div class="content-container">
+            <!-- Workflow Stages Section -->
+            <div class="section">
+                <h2><i class="fas fa-tasks"></i> Workflow Stages</h2>
+                <div class="workflow-stages">
+                    <div class="stage">
+                        <h3>1. Complaint Received</h3>
+                        <p>Complaint is submitted and logged into the system.</p>
+                    </div>
+                    <div class="stage">
+                        <h3>2. Under Review</h3>
+                        <p>Complaint is being reviewed by the assigned admin.</p>
+                    </div>
+                    <div class="stage">
+                        <h3>3. Investigation</h3>
+                        <p>Further investigation is conducted if necessary.</p>
+                    </div>
+                    <div class="stage">
+                        <h3>4. Resolution</h3>
+                        <p>Complaint is resolved, and feedback is provided.</p>
+                    </div>
+                    <div class="stage">
+                        <h3>5. Closed</h3>
+                        <p>Complaint is officially closed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assigned Complaints Section -->
+            <div class="section">
+                <h2><i class="fas fa-clipboard-list"></i> Assigned Complaints</h2>
+                <table class="assigned-complaints-table">
+                    <thead>
+                        <tr>
+                            <th>Complaint Title</th>
+                            <th>Assigned To</th>
+                            <th>Current Stage</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Unfair Grading</td>
+                            <td>Admin A</td>
+                            <td><span class="stage-status under-review">Under Review</span></td>
+                            <td>
+                                <button class="update-button">Update</button>
+                                <button class="view-button">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Broken Chair in Classroom</td>
+                            <td>Admin B</td>
+                            <td><span class="stage-status investigation">Investigation</span></td>
+                            <td>
+                                <button class="update-button">Update</button>
+                                <button class="view-button">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Harassment Complaint</td>
+                            <td>Admin C</td>
+                            <td><span class="stage-status resolution">Resolution</span></td>
+                            <td>
+                                <button class="update-button">Update</button>
+                                <button class="view-button">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Update Workflow Section -->
+            <div class="section">
+                <h2><i class="fas fa-edit"></i> Update Workflow</h2>
+                <form id="updateWorkflowForm">
+                    <div class="form-group">
+                        <label for="complaintId">Complaint ID</label>
+                        <input type="text" id="complaintId" name="complaintId" placeholder="Enter complaint ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateStage">Update Stage</label>
+                        <select id="updateStage" name="updateStage" required>
+                            <option value="">Select stage</option>
+                            <option value="Complaint Received">Complaint Received</option>
+                            <option value="Under Review">Under Review</option>
+                            <option value="Investigation">Investigation</option>
+                            <option value="Resolution">Resolution</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateNotes">Notes</label>
+                        <textarea id="updateNotes" name="updateNotes" placeholder="Enter update notes" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Update Workflow</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

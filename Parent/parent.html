@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Notifications - EduConnect</title>
+    <link rel="stylesheet" href="./parent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../HomePage.html'">
+                <li><i class="fas fa-home"></i>Home</li>
+            </div>
+            <div class="notifications" onclick="window.location.href='./parent_notifications.html'">
+                <li><i class="fas fa-bell"></i>Child Notifications</li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../Profile/profile.html'">
+                <i class="fas fa-user"></i>Profile
+            </button>
+            <button class="top-button" onclick="window.location.href='../../login.html'">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </button>
+        </div>
+
+        <h1 class="title">Notifications</h1>
+        <div class="notification-container">
+            <ul class="notification-list">
+                <li class="notification-item new">
+                    <strong>Academic Update:</strong> Your child scored 85% in the recent Math exam.
+                </li>
+                <li class="notification-item">
+                    <strong>Leave Approved:</strong> Your child's leave request from 12th to 14th March has been approved.
+                </li>
+                <li class="notification-item">
+                    <strong>Event Reminder:</strong> Parent-teacher meeting scheduled for 20th March at 10:00 AM.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

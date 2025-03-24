@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Student Reports</title>
+    <link rel="stylesheet" href="./report.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../homepage.html'">
+                <li><i class="fas fa-home"></i> Home</li>
+            </div>
+            <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'">
+                <li><i class="fas fa-comment-dots"></i> Complaint System</li>
+            </div>
+            <div class="course" onclick="window.location.href='../Course Section/course.html'">
+                <li><i class="fas fa-book"></i> Course Section</li>
+            </div>
+            <div class="exam" onclick="window.location.href='../Exam/exam.html'">
+                <li><i class="fas fa-calendar-check"></i> Exam Schedule</li>
+            </div>
+            <div class="leave" onclick="window.location.href='../Leave Application/leave.html'">
+                <li><i class="fas fa-calendar-day"></i> Leave Application</li>
+            </div>
+            <div class="feedback" onclick="window.location.href='../Feedback/feedback.html'">
+                <li><i class="fas fa-comment"></i> Student Feedback</li>
+            </div>
+            <div class="report" onclick="window.location.href='../Student Report/report.html'">
+                <li><i class="fas fa-file-alt"></i> Student Report</li>
+            </div>
+            <div class="events" onclick="window.location.href='../Events/event.html'">
+                <li><i class="fas fa-calendar-alt"></i> Upcoming Events</li>
+            </div>
+            <div class="cheating" onclick="window.location.href='../Cheating Records/cheat.html'">
+                <li><i class="fas fa-exclamation-triangle"></i> Cheating Records</li>
+            </div>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Student Reports</h1>
+
+        <div class="reports-container">
+            <table class="reports-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Attendance</th>
+                        <th>GPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sahil Kangle</td>
+                        <td>101</td>
+                        <td>75/100</td>
+                        <td>3.8</td>
+                    </tr>
+                    <tr>
+                        <td>Sakshi Jomivale</td>
+                        <td>102</td>
+                        <td>85/100</td>
+                        <td>3.9</td>
+                    </tr>
+                    <tr>
+                        <td>Sneha Kondekar</td>
+                        <td>103</td>
+                        <td>90/100</td>
+                        <td>4.0</td>
+                    </tr>
+                    <tr>
+                        <td>Sudesh Dahale</td>
+                        <td>104</td>
+                        <td>80/100</td>
+                        <td>3.7</td>
+                    </tr>
+                    <!-- More students can be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

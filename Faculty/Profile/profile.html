@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Profile</title>
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            
+            <div class="home" onclick="window.location.href='../homepage.html'">
+                <li><i class="fas fa-home"></i> Home</li>
+            </div>
+            <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'">
+                <li><i class="fas fa-comment-dots"></i> Complaint System</li>
+            </div>
+            <div class="course" onclick="window.location.href='../Course Section/course.html'">
+                <li><i class="fas fa-book"></i> Course Section</li>
+            </div>
+            <div class="exam" onclick="window.location.href='../Exam/exam.html'">
+                <li><i class="fas fa-calendar-check"></i> Exam Schedule</li>
+            </div>
+            <div class="leave" onclick="window.location.href='../Leave Application/leave.html'">
+                <li><i class="fas fa-calendar-day"></i> Leave Application</li>
+            </div>
+            <div class="feedback" onclick="window.location.href='../Feedback/feedback.html'">
+                <li><i class="fas fa-comment"></i> Student Feedback</li>
+            </div>
+            <div class="report" onclick="window.location.href='../Student Report/report.html'">
+                <li><i class="fas fa-file-alt"></i> Student Report</li>
+            </div>
+            <div class="events" onclick="window.location.href='../Events/event.html'">
+                <li><i class="fas fa-calendar-alt"></i> Upcoming Events</li>
+            </div>
+            <div class="cheating" onclick="window.location.href='../Cheating Records/cheat.html'">
+                <li><i class="fas fa-exclamation-triangle"></i> Cheating Records</li>
+            </div>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="topbar">
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <div class="profile-container">
+            <!-- Faculty Details -->
+            <div class="profile-card">
+                <div class="profile-header">
+                    <img src="faculty_avatar.png" alt="" class="profile-image">
+                    <div>
+                        <h2 class="faculty-name">Dr. Sahil Kangle</h2>
+                        <p class="faculty-role">Professor of Computer Science</p>
+                    </div>
+                </div>
+                <div class="faculty-contact">
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> sahil.kangle@university.edu</p>
+                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 98765 43210</p>
+                    <p><i class="fas fa-building"></i> <strong>Department:</strong> Computer Science</p>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="info-card">
+                <h3>About Dr. John Doe</h3>
+                <p><i class="fas fa-user-tie"></i> <strong>Experience:</strong> 10+ years in teaching and research</p>
+                <p><i class="fas fa-brain"></i> <strong>Specialization:</strong> Artificial Intelligence, Machine Learning</p>
+                <p><i class="fas fa-clock"></i> <strong>Office Hours:</strong> Mon-Fri (10 AM - 4 PM)</p>
+                <p><i class="fas fa-file-alt"></i> <strong>Research Papers:</strong> 15+ published in international journals</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

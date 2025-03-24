@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheating Incident Reports</title>
+    <link rel="stylesheet" href="./reports.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='../../../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../../../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../../../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../../../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../../../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button" onclick="window.location.href = '../../../AdminHomePage.html'"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href = '../../../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Cheating Incident Reports</h1>
+        <div class="content-container">
+            <!-- Report New Incident Section -->
+            <div class="section">
+                <h2><i class="fas fa-exclamation-circle"></i> Report New Incident</h2>
+                <form id="incidentForm">
+                    <div class="form-group">
+                        <label for="studentName">Student Name</label>
+                        <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="incidentDate">Incident Date</label>
+                        <input type="date" id="incidentDate" name="incidentDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="incidentDescription">Description</label>
+                        <textarea id="incidentDescription" name="incidentDescription" placeholder="Enter incident description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportedBy">Reported By</label>
+                        <input type="text" id="reportedBy" name="reportedBy" placeholder="Enter reporter's name" required>
+                    </div>
+                    <button type="submit" class="submit-button">Report Incident</button>
+                </form>
+            </div>
+
+            <!-- Incident Tracking Section -->
+            <div class="section">
+                <h2><i class="fas fa-clipboard-list"></i> Incident Tracking</h2>
+                <div class="incident-grid">
+                    <div class="incident-item">
+                        <h3>Student: John Doe</h3>
+                        <p><strong>Date:</strong> 2023-10-10</p>
+                        <p><strong>Reported By:</strong> Prof. Smith</p>
+                        <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+                        <div class="action-buttons">
+                            <button class="resolve-button">Resolve</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                    <div class="incident-item">
+                        <h3>Student: Jane Smith</h3>
+                        <p><strong>Date:</strong> 2023-09-25</p>
+                        <p><strong>Reported By:</strong> Prof. Brown</p>
+                        <p><strong>Status:</strong> <span class="status resolved">Resolved</span></p>
+                        <div class="action-buttons">
+                            <button class="reopen-button">Reopen</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                    <div class="incident-item">
+                        <h3>Student: Alice Johnson</h3>
+                        <p><strong>Date:</strong> 2023-08-15</p>
+                        <p><strong>Reported By:</strong> Prof. Green</p>
+                        <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+                        <div class="action-buttons">
+                            <button class="resolve-button">Resolve</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Incident Statistics Section -->
+            <div class="section">
+                <h2><i class="fas fa-chart-bar"></i> Incident Statistics</h2>
+                <div class="statistics-grid">
+                    <div class="statistic-item">
+                        <h3>Total Incidents</h3>
+                        <p class="statistic-value">15</p>
+                    </div>
+                    <div class="statistic-item">
+                        <h3>Pending Incidents</h3>
+                        <p class="statistic-value">8</p>
+                    </div>
+                    <div class="statistic-item">
+                        <h3>Resolved Incidents</h3>
+                        <p class="statistic-value">7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

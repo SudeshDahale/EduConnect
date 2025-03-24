@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Now - Student Council Elections</title>
+    <link rel="stylesheet" href="./vote.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../../../HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="election" onclick="window.location.href='../../election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="complaint" onclick="window.location.href='../../../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="leave" onclick="window.location.href='../../../Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="events" onclick="window.location.href='../../../Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <div class="feedback" onclick="window.location.href='./Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../../Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../notification.html'"><i class="fas fa-bell"></i>Notifications</button>
+            <button class="top-button" onclick="window.location.href='../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Vote Now - Student Council Election</h1>
+
+        <p class="description">Please authenticate with your student ID and password to vote for your preferred candidate. View the candidate profiles, and after voting, track the live results!</p>
+
+        <div class="authentication">
+            <label for="studentId">Enter Your Student ID:</label>
+            <input type="text" id="studentId" placeholder="123456" required>
+            
+            <label for="password">Enter Your Password:</label>
+            <input type="password" id="password" placeholder="********" required>
+
+            <button id="authenticateBtn" class="auth-button">Authenticate</button>
+        </div>
+
+        <div class="vote-section" style="display: none;">
+            <h2>Select Your Candidate</h2>
+            <div class="candidate-selection">
+                <label for="candidate1" class="candidate-item">
+                    <input type="radio" id="candidate1" name="candidate" value="John Doe" required>
+                    <div class="candidate-info">
+                        <h3>Sahil Kangle</h3>
+                        <p>Major: Information Technology</p>
+                        <p>Vision: To enhance student resources and improve campus life!</p>
+                    </div>
+                </label>
+
+                <label for="candidate2" class="candidate-item">
+                    <input type="radio" id="candidate2" name="candidate" value="Jane Smith" required>
+                    <div class="candidate-info">
+                        <h3>Sneha Kondekar</h3>
+                        <p>Major: Computer Science</p>
+                        <p>Vision: To be the voice of students and lead with innovation!</p>
+                    </div>
+                </label>
+
+                <label for="candidate3" class="candidate-item">
+                    <input type="radio" id="candidate3" name="candidate" value="Alex Johnson" required>
+                    <div class="candidate-info">
+                        <h3>Sakshi Jomivale</h3>
+                        <p>Major: Mechanical Engineering/p>
+                        <p>Vision: Strengthening student-faculty relationships for a thriving campus.</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="submit-btn" id="submitVoteBtn">Submit Vote</button>
+            </div>
+        </div>
+
+        <div class="confirmation-message" id="confirmationMessage" style="display: none;">
+            <i class="fas fa-check-circle"></i>
+            <p>Your vote has been successfully submitted!</p>
+        </div>
+
+        <div class="result-icon" id="resultIcon" style="display: none;">
+            <a href="./result.html"><i class="fas fa-chart-bar"></i> View Election Results</a>
+        </div>
+    </div>
+
+    <script>
+        // Handle student ID and password authentication
+        document.getElementById('authenticateBtn').addEventListener('click', function() {
+            const studentId = document.getElementById('studentId').value;
+            const password = document.getElementById('password').value;
+
+            // Mock authentication - In real life, you would authenticate against a server
+            if (studentId === "123456" && password === "password123") {
+                document.querySelector('.authentication').style.display = 'none';
+                document.querySelector('.vote-section').style.display = 'block';
+            } else {
+                alert('Invalid Student ID or Password. Please try again.');
+            }
+        });
+
+        // Handle vote submission and prevent multiple votes
+        let hasVoted = false; // Flag to track if the student has voted
+
+        document.getElementById('submitVoteBtn').addEventListener('click', function() {
+            if (hasVoted) {
+                alert('You have already voted. You cannot vote again.');
+                return;
+            }
+
+            const selectedCandidate = document.querySelector('input[name="candidate"]:checked');
+            if (selectedCandidate) {
+                // Simulate vote submission
+                const candidate = selectedCandidate.value;
+                document.getElementById('confirmationMessage').style.display = 'block';
+                document.getElementById('resultIcon').style.display = 'block';
+                document.querySelector('.vote-section').style.display = 'none'; // Hide vote section after voting
+                hasVoted = true; // Set flag to true to prevent further voting
+            } else {
+                alert('Please select a candidate before submitting your vote.');
+            }
+        });
+    </script>
+</body>
+</html>

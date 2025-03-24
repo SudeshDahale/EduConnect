@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Election</title>
+    <link rel="stylesheet" href="./election.css">
+    <link rel="stylesheet" href="path/to/global.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="home" onclick="window.location.href='../HomePage.html'"><li><i class="fas fa-home"></i>Home</li></div>
+            <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <!-- <div class="home" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-home"></i>Home</li></div> -->
+            <div class="leave" onclick="window.location.href='../Leave Application/leave.html'"><li><i class="fas fa-calendar-day"></i>Leave Application</li></div>   
+            <!-- <div class="home" onclick="window.location.href='./AdminHomePage.html'"><li><i class="fas fa-home"></i>Home</li></div> -->
+            <!-- <div class="complaint" onclick="window.location.href='../Complaint/complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div> -->
+            <div class="cheating" onclick="window.location.href='../Cheating Records/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../Student Election/election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+            <div class="events" onclick="window.location.href='../Events/event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <div class="feedback" onclick="window.location.href='../Feedback/feedback.html'"><li><i class="fas fa-comment"></i>Feedback & Surveys</li></div>
+            
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../Profile/profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../notification.html'"><i class="fas fa-bell"></i>Notifications</button>
+            <button class="top-button" onclick="window.location.href='../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+
+        </div>
+
+        <h1 class="title">Student Election</h1>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <i class="fas fa-vote-yea icon"></i>
+                <h2>Vote Now</h2>
+                <p>Make your voice heard by voting for your favorite candidate.</p>
+                <a href="./feature_election/vote/vote.html" class="button">Go to Voting</a>
+            </div>
+
+            <div class="grid-item">
+                <i class="fas fa-user-plus icon"></i>
+                <h2>Candidate Registration</h2>
+                <p>Apply to become a candidate and stand for election.</p>
+                <a href="./feature_election/register/register.html" class="button">Register Now</a>
+            </div>
+
+            <div class="grid-item">
+                <i class="fas fa-check-circle icon"></i>
+                <h2>Candidate Approval</h2>
+                <p>Approve registered candidates for voting eligibility.</p>
+                <a href="./feature_election/Approved Candidates/approve.html" class="button">Approve Candidates</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

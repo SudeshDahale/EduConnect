@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Integrity</title>
+    <link rel="stylesheet" href="./integrity..css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='../../../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../../../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../../../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../../../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../../../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button" onclick="window.location.href = '../../../AdminHomePage.html'"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href = '../../../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+        <h1 class="title">Academic Integrity</h1>
+        <div class="content-container">
+            <!-- Academic Integrity Guidelines Section -->
+            <div class="section">
+                <h2><i class="fas fa-book"></i> Academic Integrity Guidelines</h2>
+                <div class="guidelines">
+                    <p>Academic integrity is the cornerstone of our educational mission. All students are expected to adhere to the following principles:</p>
+                    <ul>
+                        <li><strong>Honesty:</strong> Submit original work and give proper credit to others' ideas.</li>
+                        <li><strong>Trust:</strong> Foster an environment of trust and fairness.</li>
+                        <li><strong>Fairness:</strong> Ensure equal opportunities for all students.</li>
+                        <li><strong>Respect:</strong> Respect the intellectual property of others.</li>
+                        <li><strong>Responsibility:</strong> Take responsibility for your actions and their consequences.</li>
+                    </ul>
+                    <p>Violations of academic integrity, such as plagiarism, cheating, or falsification, will result in disciplinary action.</p>
+                </div>
+            </div>
+
+            <!-- Report Violation Section -->
+            <div class="section">
+                <h2><i class="fas fa-exclamation-triangle"></i> Report a Violation</h2>
+                <form id="violationForm">
+                    <div class="form-group">
+                        <label for="studentName">Student Name</label>
+                        <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="violationDate">Violation Date</label>
+                        <input type="date" id="violationDate" name="violationDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="violationType">Violation Type</label>
+                        <select id="violationType" name="violationType" required>
+                            <option value="">Select violation type</option>
+                            <option value="Plagiarism">Plagiarism</option>
+                            <option value="Cheating">Cheating</option>
+                            <option value="Falsification">Falsification</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="violationDescription">Description</label>
+                        <textarea id="violationDescription" name="violationDescription" placeholder="Enter violation description" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Report Violation</button>
+                </form>
+            </div>
+
+            <!-- Violation History Section -->
+            <div class="section">
+                <h2><i class="fas fa-history"></i> Violation History</h2>
+                <table class="violation-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Violation Type</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Plagiarism</td>
+                            <td>2023-10-10</td>
+                            <td>Submitted a copied assignment.</td>
+                            <td><span class="status resolved">Resolved</span></td>
+                            <td>
+                                <button class="edit-button">Edit</button>
+                                <button class="delete-button">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>Cheating</td>
+                            <td>2023-09-25</td>
+                            <td>Used unauthorized materials during an exam.</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <button class="edit-button">Edit</button>
+                                <button class="delete-button">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alice Johnson</td>
+                            <td>Falsification</td>
+                            <td>2023-08-15</td>
+                            <td>Altered grades on a submitted document.</td>
+                            <td><span class="status resolved">Resolved</span></td>
+                            <td>
+                                <button class="edit-button">Edit</button>
+                                <button class="delete-button">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Submission and Approval</title>
+    <link rel="stylesheet" href="./submission.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">EduConnect</div>
+        <ul>
+            <div class="admin-page" onclick="window.location.href='../../../AdminHomePage.html'"><li><i class="fas fa-tachometer-alt"></i>Dashboard</li></div>
+            <div class="event" onclick="window.location.href='../../../Event Page/Event.html'"><li><i class="fas fa-calendar-alt"></i>Upcoming Events</li></div>
+            <!-- <li><i class="fas fa-wallet"></i>Fees Management</li> -->
+            <div class="complaint" onclick="window.location.href='../../../Complaint System/Complaint.html'"><li><i class="fas fa-comment-dots"></i>Complaint System</li></div>
+            <div class="health" onclick="window.location.href='../../../Health and Leave/Health.html'"><li><i class="fas fa-heartbeat"></i>Health Leave Status</li></div>
+            <div class="feedback" onclick="window.location.href='../../../Feedback/Feedback.html'"><li><i class="fas fa-poll"></i>Survey and Feedback</li></div>
+            <div class="cheating" onclick="window.location.href='../../../Cheating Record/cheat.html'"><li><i class="fas fa-exclamation-triangle"></i>Cheating Records</li></div>
+            <div class="election" onclick="window.location.href='../../../Student Election System/Election.html'"><li><i class="fas fa-vote-yea"></i>Student Election</li></div>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <!-- <button class="top-button"><i class="fas fa-home"></i>Home</button> -->
+            <button class="top-button" onclick="window.location.href='../../../profile.html'"><i class="fas fa-user"></i>Profile</button>
+            <button class="top-button" onclick="window.location.href='../../../../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+
+        <h1 class="title">Event Submission and Approval</h1>
+
+        <div class="content-container">
+            <div class="section">
+                <h2><i class="fas fa-table"></i> Event Approval Requests</h2>
+                <table class="events-table">
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Date</th>
+                            <th>Location</th>
+                            <th>Budget</th>
+                            <th>Sponsors</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Fetched events will be inserted here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = "https://2d53-2401-4900-79fe-ce51-d9d9-a24a-abf-ebb.ngrok-free.app/api/events";
+
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchEvents();
+        });
+
+        function fetchEvents() {
+            fetch(API_BASE_URL)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Fetched Events:", data); // Debugging
+
+                    const tableBody = document.querySelector(".events-table tbody");
+                    tableBody.innerHTML = ""; // Clear previous content
+
+                    if (!data || data.length === 0) {
+                        tableBody.innerHTML = "<tr><td colspan='7' style='text-align:center;'>⚠ No events found</td></tr>";
+                        return;
+                    }
+
+                    data.forEach(event => {
+                        const row = `
+                            <tr>
+                                <td>${event.event_name || "N/A"}</td>
+                                <td>${event.event_date || "N/A"}</td>
+                                <td>${event.event_location || "N/A"}</td>
+                                <td>${event.event_budget || "N/A"}</td>
+                                <td>${event.event_sponsor || "N/A"}</td>
+                                <td><span class="status ${event.status?.toLowerCase() || "pending"}">${event.status || "Pending"}</span></td>
+                                <td>
+                                    <button class="approve-button" onclick="updateEvent(${event.id}, 'approved')">Approve</button>
+                                    <button class="reject-button" onclick="updateEvent(${event.id}, 'rejected')">Reject</button>
+                                </td>
+                            </tr>`;
+                        tableBody.innerHTML += row;
+                    });
+                })
+                .catch(error => console.error("❌ Error fetching events:", error));
+        }
+
+        function updateEvent(eventId, newStatus) {
+            console.log(`🔄 Updating Event ${eventId} to ${newStatus}...`); // Debugging log
+            
+            fetch(`${API_BASE_URL}/${eventId}/update-status`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ status: newStatus }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP Error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(`✅ Event ${eventId} updated successfully to ${newStatus}`, data);
+                alert(`Event ${eventId} is now ${newStatus}`);
+                fetchEvents(); // Refresh events after updating
+            })
+            .catch(error => {
+                console.error("❌ Error updating event:", error);
+                alert("Failed to update event. Please try again.");
+            });
+        }
+    </script>
+</body>
+</html>
