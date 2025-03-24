@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Create Tabular Template</title>
+  <!-- Include your CSS files -->
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="r.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <style>
+    /* Page-specific or overriding styles */
+
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+      color: #064663;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #064663;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .table-container {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-container th,
+    .table-container td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      min-width: 120px; /* Prevents columns from collapsing too small */
+    }
+
+    .add-document-btn {
+      margin-top: 10px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .add-document-btn:hover {
+      background-color: #218838;
+    }
+
+    .remove-row-btn {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .remove-row-btn:hover {
+      background-color: #c82333;
+    }
+
+    .publish-btn {
+      display: block;
+      margin: 20px auto;
+      background: #064663;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .publish-btn:hover {
+      background: #1b6b93;
+    }
+
+    /* Responsive adjustments if needed */
+    @media (max-width: 768px) {
+      .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">EduConnect</div>
+    <ul>
+      <div class="dashboard" onclick="window.location.href='./admin_dashboard.html'">
+        <li><i class="fas fa-tachometer-alt"></i>Dashboard</li>
+      </div>
+      <div class="create-template" onclick="window.location.href='./admin_table.html'">
+        <li><i class="fas fa-table"></i>Create Table Template</li>
+      </div>
+      <div class="manage-submissions" onclick="window.location.href='./admin_submissions.html'">
+        <li><i class="fas fa-check-square"></i>Manage Submissions</li>
+      </div>
+      <div class="logout" onclick="window.location.href='../login.html'">
+        <li><i class="fas fa-sign-out-alt"></i>Logout</li>
+      </div>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="topbar">
+      <button class="top-button" onclick="window.location.href='./admin_profile.html'"><i class="fas fa-user"></i>Profile</button>
+      <button class="top-button" onclick="window.location.href='./admin_notifications.html'"><i class="fas fa-bell"></i>Notifications</button>
+      <button class="top-button" onclick="window.location.href='../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+    </div>
+
+    <h1 class="title">Create Document Submission Template</h1>
+
+    <!-- Template Settings -->
+    <div class="form-container">
+      <h2>Template Settings</h2>
+      <div class="form-group">
+        <label for="templateName">Template Name:</label>
+        <input type="text" id="templateName" placeholder="e.g., Semester Document Submission" />
+      </div>
+      <div class="form-group">
+        <label for="branchSelect">Branch:</label>
+        <select id="branchSelect">
+          <option value="">Select Branch</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Electrical">Electrical</option>
+          <option value="Mechanical">Mechanical</option>
+        </select>
+
+        <label for="yearSelect">Year:</label>
+        <select id="yearSelect">
+          <option value="">Select Year</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+
+        <label for="divSelect">Division:</label>
+        <select id="divSelect">
+          <option value="">Select Division</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Table Container -->
+    <div class="table-container">
+      <table id="documentTable">
+        <thead>
+          <tr>
+            <th>Document Name</th>
+            <th>Description</th>
+            <th>Deadline</th>
+            <th>Proof Link (Optional)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Empty by default; admin can add rows below -->
+        </tbody>
+      </table>
+      <!-- Single button to add new rows -->
+      <button class="add-document-btn" onclick="addRow()">+ Add Document</button>
+    </div>
+
+    <!-- Publish Button -->
+    <button class="publish-btn" onclick="publishTemplate()">Publish Template</button>
+  </div>
+
+  <!-- JavaScript for dynamic rows & publishing -->
+  <script>
+    function addRow() {
+      const tableBody = document.querySelector('#documentTable tbody');
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td><input type="text" placeholder="e.g., ID Proof" /></td>
+        <td><input type="text" placeholder="Short description" /></td>
+        <td><input type="date" /></td>
+        <td><input type="url" placeholder="https://..." /></td>
+        <td>
+          <button class="remove-row-btn" onclick="removeRow(this)">Remove</button>
+        </td>
+      `;
+      tableBody.appendChild(newRow);
+    }
+
+    function removeRow(button) {
+      const row = button.closest('tr');
+      row.remove();
+    }
+
+    function publishTemplate() {
+      // Basic validation
+      const templateName = document.getElementById('templateName').value.trim();
+      if (!templateName) {
+        alert('Please enter a Template Name before publishing.');
+        return;
+      }
+
+      // Gather the table data
+      const rows = document.querySelectorAll('#documentTable tbody tr');
+      if (rows.length === 0) {
+        alert('Please add at least one document row.');
+        return;
+      }
+
+      // Example: building a data object (for a real app, you'd send this to your server)
+      const templateData = {
+        templateName: templateName,
+        branch: document.getElementById('branchSelect').value,
+        year: document.getElementById('yearSelect').value,
+        division: document.getElementById('divSelect').value,
+        documents: []
+      };
+
+      rows.forEach((row) => {
+        const cells = row.querySelectorAll('td');
+        templateData.documents.push({
+          documentName: cells[0].querySelector('input').value,
+          description: cells[1].querySelector('input').value,
+          deadline: cells[2].querySelector('input').value,
+          proofLink: cells[3].querySelector('input').value
+        });
+      });
+
+      console.log('Template Data:', templateData);
+      alert('Template published successfully. Notifications sent to students!');
+      // In a real application, you'd send 'templateData' to your backend (e.g., via fetch or AJAX).
+    }
+  </script>
+</body>
+</html>

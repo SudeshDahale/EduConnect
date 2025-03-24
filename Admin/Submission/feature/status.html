@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Manage Submissions (Improved with Document View)</title>
+  <!-- Include your CSS files -->
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href="../submission.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    /* Additional styles for the improved page */
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .filter-group label {
+      font-weight: bold;
+      color: #064663;
+    }
+    .filter-group select,
+    .filter-group input[type="text"] {
+      padding: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .table-container {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f4f8;
+    }
+    .status-submitted {
+      color: green;
+      font-weight: bold;
+    }
+    .status-pending {
+      color: red;
+      font-weight: bold;
+    }
+    a.view-link {
+      color: #064663;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.view-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">EduConnect</div>
+    <ul>
+      <div class="dashboard" onclick="window.location.href='./admin_dashboard.html'">
+        <li><i class="fas fa-tachometer-alt"></i>Dashboard</li>
+      </div>
+      <div class="create-template" onclick="window.location.href='./admin_table.html'">
+        <li><i class="fas fa-table"></i>Create Table Template</li>
+      </div>
+      <div class="manage-submissions" onclick="window.location.href='./admin_submissions_improved.html'">
+        <li><i class="fas fa-check-square"></i>Manage Submissions</li>
+      </div>
+      <div class="logout" onclick="window.location.href='../login.html'">
+        <li><i class="fas fa-sign-out-alt"></i>Logout</li>
+      </div>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="topbar">
+      <button class="top-button" onclick="window.location.href='./admin_profile.html'"><i class="fas fa-user"></i>Profile</button>
+      <button class="top-button" onclick="window.location.href='./admin_notifications.html'"><i class="fas fa-bell"></i>Notifications</button>
+      <button class="top-button" onclick="window.location.href='../login.html'"><i class="fas fa-sign-out-alt"></i>Logout</button>
+    </div>
+
+    <h1 class="title">Manage Student Submissions (2nd Year)</h1>
+
+    <!-- Filter Section -->
+    <div class="filter-container">
+      <div class="filter-group">
+        <label for="divisionFilter">Division:</label>
+        <select id="divisionFilter" onchange="applyFilters()">
+          <option value="All">All</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="statusFilter">Status:</label>
+        <select id="statusFilter" onchange="applyFilters()">
+          <option value="All">All</option>
+          <option value="Submitted">Submitted</option>
+          <option value="Pending">Pending</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="searchInput">Search:</label>
+        <input type="text" id="searchInput" placeholder="Roll No or Name" onkeyup="applyFilters()">
+      </div>
+    </div>
+
+    <!-- Table Container -->
+    <div class="table-container">
+      <table id="submissionTable">
+        <thead>
+          <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Document</th>
+            <th>Status</th>
+            <th>Submission Date</th>
+            <th>Division</th>
+            <th>Submitted Document</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Division A Students -->
+          <tr data-division="A" data-status="Submitted">
+            <td>201</td>
+            <td>John Doe</td>
+            <td>ID Proof</td>
+            <td class="status-submitted">Submitted</td>
+            <td>2025-04-10</td>
+            <td>A</td>
+            <td><a class="view-link" href="https://example.com/submitted/john_doe_idproof.pdf" target="_blank">View Document</a></td>
+          </tr>
+          <tr data-division="A" data-status="Pending">
+            <td>202</td>
+            <td>Jane Smith</td>
+            <td>Address Proof</td>
+            <td class="status-pending">Pending</td>
+            <td>-</td>
+            <td>A</td>
+            <td>-</td>
+          </tr>
+          <tr data-division="A" data-status="Pending">
+            <td>203</td>
+            <td>Mark Johnson</td>
+            <td>Passport Photo</td>
+            <td class="status-pending">Pending</td>
+            <td>-</td>
+            <td>A</td>
+            <td>-</td>
+          </tr>
+          <!-- Division B Students -->
+          <tr data-division="B" data-status="Submitted">
+            <td>204</td>
+            <td>Emily Brown</td>
+            <td>ID Proof</td>
+            <td class="status-submitted">Submitted</td>
+            <td>2025-04-12</td>
+            <td>B</td>
+            <td><a class="view-link" href="https://example.com/submitted/emily_brown_idproof.pdf" target="_blank">View Document</a></td>
+          </tr>
+          <tr data-division="B" data-status="Pending">
+            <td>205</td>
+            <td>Michael Green</td>
+            <td>Address Proof</td>
+            <td class="status-pending">Pending</td>
+            <td>-</td>
+            <td>B</td>
+            <td>-</td>
+          </tr>
+          <tr data-division="B" data-status="Submitted">
+            <td>206</td>
+            <td>Linda Wilson</td>
+            <td>Passport Photo</td>
+            <td class="status-submitted">Submitted</td>
+            <td>2025-04-13</td>
+            <td>B</td>
+            <td><a class="view-link" href="https://example.com/submitted/linda_wilson_passport.pdf" target="_blank">View Document</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- JavaScript for Filtering -->
+  <script>
+    function applyFilters() {
+      const divisionFilter = document.getElementById("divisionFilter").value;
+      const statusFilter = document.getElementById("statusFilter").value;
+      const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#submissionTable tbody tr");
+
+      rows.forEach(row => {
+        const rowDivision = row.getAttribute("data-division");
+        const rowStatus = row.getAttribute("data-status");
+        const rollNo = row.cells[0].textContent.toLowerCase();
+        const name = row.cells[1].textContent.toLowerCase();
+
+        const divisionMatch = (divisionFilter === "All" || rowDivision === divisionFilter);
+        const statusMatch = (statusFilter === "All" || rowStatus === statusFilter);
+        const searchMatch = (rollNo.includes(searchQuery) || name.includes(searchQuery));
+
+        row.style.display = (divisionMatch && statusMatch && searchMatch) ? "" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
